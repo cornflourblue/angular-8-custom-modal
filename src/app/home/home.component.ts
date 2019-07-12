@@ -6,8 +6,7 @@ import { ModalService } from '../_modal';
 export class HomeComponent implements OnInit {
     bodyText: string;
 
-    constructor(private modalService: ModalService) {
-    }
+    constructor(private modalService: ModalService) { }
 
     ngOnInit() {
         this.bodyText = 'This text can be updated in modal 1';
