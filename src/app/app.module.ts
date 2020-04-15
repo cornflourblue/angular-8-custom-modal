@@ -1,13 +1,12 @@
+import { ModalService } from './_modal/modal.service';
+import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
-import { ModalModule } from './_modal';
 import { appRoutingModule } from './app.routing';
-
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home';
 import { TestPageComponent } from './test-page';
+import { ModalModule } from './_modal/modal.module';
 
 @NgModule({
     imports: [
@@ -18,9 +17,10 @@ import { TestPageComponent } from './test-page';
     ],
     declarations: [
         AppComponent,
-        HomeComponent,
-        TestPageComponent
+        TestPageComponent,
+        HomeComponent
     ],
+    providers: [ModalService],
     bootstrap: [AppComponent]
 })
 

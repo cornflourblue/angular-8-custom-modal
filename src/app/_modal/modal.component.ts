@@ -1,10 +1,10 @@
-﻿import { Component, ViewEncapsulation, ElementRef, Input, OnInit, OnDestroy } from '@angular/core';
+﻿import { Component, ViewEncapsulation, ElementRef, Input, OnInit, OnDestroy, HostListener } from '@angular/core';
 
 import { ModalService } from './modal.service';
 
-@Component({ 
-    selector: 'jw-modal', 
-    templateUrl: 'modal.component.html', 
+@Component({
+    selector: 'jw-modal',
+    templateUrl: 'modal.component.html',
     styleUrls: ['modal.component.less'],
     encapsulation: ViewEncapsulation.None
 })
@@ -53,5 +53,12 @@ export class ModalComponent implements OnInit, OnDestroy {
     close(): void {
         this.element.style.display = 'none';
         document.body.classList.remove('jw-modal-open');
+    }
+
+    @HostListener('document:keydown', ['$event'])
+    onKeyDownHandler(event: KeyboardEvent) {
+        if (event.key === 'Escape') {
+            this.close();
+        }
     }
 }

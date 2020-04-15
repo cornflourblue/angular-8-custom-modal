@@ -1,6 +1,5 @@
 ﻿import { Component, OnInit } from '@angular/core';
-
-import { ModalService } from '../_modal';
+import { ModalService } from '../_modal/modal.service';
 
 @Component({ templateUrl: 'home.component.html' })
 export class HomeComponent implements OnInit {
